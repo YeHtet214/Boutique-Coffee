@@ -1,0 +1,432 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+} */
+
+/*_____________________________________________________________________________________ */
+/******************************  Utilities Classes Start  ************************************* */
+
+.navlist a {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.navlist a:hover {
+  color: #EFDB83 !important;
+  text-decoration: underline;
+}
+
+.styled-p {
+  color: #B7896F;
+  font-weight: bold;
+}
+
+.nav-link.active {
+  color: #EFDB83 !important;
+}
+
+.action-btn {
+  background: #3E2420;
+  color: #EFDB83;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 1px solid #EFDB83;
+  transition: all 0.2s ease-in;
+}
+
+.action-btn:hover {
+  background-color: #EFDB83;
+  color: #3E2420;
+  border: 1px solid #3E2420;
+}
+
+.action-btn:active {
+  transform: scale(0.9);
+}
+
+#cart-items-list {
+  list-style: none;
+}
+
+#cart-items-list li {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #B7896F;
+}
+
+/*_____________________________________________________________________________________ */
+/******************************  Home Page Start  ************************************* */
+
+/* Header */
+header {
+  transition: all 3s ease-in;
+}
+
+nav {
+  background-color: #3E2420;
+}
+
+.brand-text {
+  color: #EFDB83;
+}
+
+.search-bar {
+  background-color: #B7896F;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.search-bar input {
+  background-color: transparent;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.search-bar input::placeholder {
+  color: white;
+}
+
+#search-result {
+  /* display: none; */
+  background-color: #B7896F;
+  color: white;
+  width: 100%;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  transform: translateY(103%);
+  list-style: none;
+}
+
+#search-result li {
+  padding: 5px 10px;
+  border-bottom: 1px solid #3E2420;
+  border-bottom: 1px solid;
+}
+
+.dropdown-menu {
+  background-color: #3E2420;
+}
+
+#nav-cart {
+  background: #B7896F;
+  color: #3E2420;
+}
+
+#nav-cart:hover,
+#nav-cart:active {
+  color: #fefefe;
+}
+
+/* hero section */
+#hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("./assets/hero-bg.jpg");
+  background-color: #3E2420;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+#hero h1 {
+  font-size: 65px;
+}
+
+/* About Sectoin */
+#about ul {
+  list-style: none;
+}
+
+#about ul li i {
+  color: #B7896F;
+}
+
+/* Featured Section */
+
+#features .carousel-item {
+  background-color: #0e0e0e;
+}
+
+#features img {
+  height: auto;
+  max-width: 700px;
+  max-height: 65vh;
+  object-fit: cover;
+  margin: auto;
+}
+
+#features .explore-btn {
+  overflow: hidden;
+}
+
+.explore-btn:hover i {
+  animation: moveRight 0.5s linear 0.3s infinite;
+  transform: translateX(200px);
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(50px)
+  }
+}
+
+/* Slide Images Section */
+.slide-container {
+  overflow: hidden;
+}
+
+.auto-slider {
+  list-style: none;
+  animation: slide 8s linear infinite;
+}
+
+.auto-slider li {
+  flex: 0 0 50%;
+}
+
+.auto-slider img {
+  width: 100%;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Special Offers and Subscription Section */
+.promotion-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Special Offers Section */
+.special-offers {
+  background-color: #f9f5f2;
+  color: #5a4634;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.offers-section h2,
+.subscription-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3c2a1b;
+}
+
+.offers-section p,
+.subscription-section p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #6e5a46;
+}
+
+.offers {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.offer-item {
+  background: #fff;
+  border: 1px solid #e0dcd7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.offer-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #3c2a1b;
+}
+
+.offer-item p {
+  font-size: 0.9rem;
+  color: #5a4634;
+}
+
+/* Subscription Section */
+.subscription-section {
+  background-color: #3c2a1b;
+  color: #fff;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin-top: 3rem;
+}
+
+.subscription-form {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subscription-form input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  width: 70%;
+  max-width: 400px;
+  outline: none;
+}
+
+.subscription-form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #e2a953;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.subscription-form button:hover {
+  background-color: #cf9140;
+}
+
+/* Footer Section  */
+footer {
+  background-color: #3E2420;
+  color: white;
+}
+
+/******************************  Home Page End  ************************************* */
+/*___________________________________________________________________________________ */
+
+
+/* Events Page */
+/* Hero Section */
+.hero-section {
+  background: url('./assets/hero-bg.jpg') center/cover no-repeat;
+  padding: 100px 0;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+}
+
+.events {
+  background: #fafafa;
+}
+
+/* Card Styling */
+.card img {
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.card .badge {
+  top: 5px;
+  right: 10px;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+  transition: ease;
+}
+
+footer {
+  font-size: 0.875rem;
+}
+
+/* Equipment Page */
+.equipment-section {
+  padding: 50px 20px;
+}
+
+.equipment-hero-section {
+  height: 100vh;
+  position: relative;
+  background: url('./assets/hero-bg.jpg') center/cover no-repeat;
+}
+
+.equipment-hero-content {
+  z-index: 2;
+  max-width: 600px;
+}
+
+.equipment-hero-content h1 {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.equipment-hero-content p {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.equipment-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s ease-in-out;
+}
+
+.equipment-item img {
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+.equipment-item:hover {
+  transform: scale(1.05);
+}
+
+.equipment-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.equipment-info h5 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.equipment-info p {
+  margin-bottom: 10px;
+}
+
+.equipment-info button {
+  margin-top: 10px;
+}
