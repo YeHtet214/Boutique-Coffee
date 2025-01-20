@@ -36,8 +36,16 @@ const navLinks = document.querySelectorAll(".nav-link");
 
 // Sign Up Modal Pop up
 function popUpModal() {
-    if (!window.location.pathname !== "/") return;
-    if (localStorage.getItem("email")) return;
+    console.log(window.location.pathname);
+    const location = window.location.pathname;
+    if (
+        location.includes("events") ||
+        location.includes("coffee") ||
+        location.includes("equipment") ||
+        location.includes("contact")
+    )
+        return;
+    if (localStorage.getItem("boutique-coffee-user")) return;
 
     const modal =
         new bootstrap.Modal(document.getElementById("exampleModal")) || null;
@@ -61,7 +69,7 @@ function handleSignUp(modal) {
 
         modal.hide();
         alert("Thank you for signing up!");
-        localStorage.setItem("email", email);
+        localStorage.setItem("boutique-coffee-user", email);
     });
 }
 
