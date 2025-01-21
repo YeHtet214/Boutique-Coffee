@@ -21,12 +21,6 @@
           <span class="brand-text">Boutique</span>
         </a>
 
-        <button class="navbar-toggler text-warning border-warning btn" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <i class="fa-solid fa-burger"></i>
-        </button>
-
         <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 navlist">
             <li class="nav-item">
@@ -46,30 +40,28 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="/events.html">Events</a>
+              <a class="nav-link text-white" href="/events.html">Events & Workshops</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/offer.html">Special Offer</a>
             </li>
           </ul>
         </div>
 
-        <form class="d-flex align-items-center justify-content-between w-100" role="search">
-          <div class="search-bar me-2 d-flex justify-content-between align-items-center position-relative">
-            <input class="text-white font-bold" type="search" placeholder="Search" aria-label="Search" id="searchInput">
-            <ul id="search-result" class="list-group position-absolute w-100 shadow-lg">
-              <!-- Search Results insert in js -->
-            </ul>
-            <i class="fa-solid fa-magnifying-glass fs-4"></i>
-          </div>
-          <button type="button" class="btn btn-light position-relative" data-bs-toggle="modal"
-            data-bs-target="#cartItemsModal">
+        <div>
+          <button class="navbar-toggler text-warning border-warning btn" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa-solid fa-burger"></i>
+          </button>
+          <button type="button" class="btn btn-light position-relative" data-bs-toggle="modal" data-bs-target="#cartItemsModal">
             <i class="fa-solid fa-cart-shopping"></i>
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-qty-badge">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-qty-badge">
               <!-- qty of cart items -->
               <span class="visually-hidden">unread messages</span>
             </span>
           </button>
-        </form>
-
+        </div>
 
       </div>
     </nav>
@@ -115,7 +107,9 @@
               <h5 class="card-title">Barista Basics Workshop</h5>
               <p class="card-text">Learn the art of brewing the perfect espresso and mastering latte art.</p>
               <p><strong>Date:</strong> January 25, 2025</p>
-              <a href="#" class="btn action-btn">Sign Up</a>
+              <button type="button" class="btn action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Register
+              </button>
             </div>
           </div>
         </div>
@@ -130,7 +124,9 @@
               <h5 class="card-title">Coffee Tasting</h5>
               <p class="card-text">Discover the unique flavors of different coffee beans from around the world.</p>
               <p><strong>Date:</strong> February 10, 2025</p>
-              <a href="#" class="btn action-btn">Sign Up</a>
+              <button type="button" class="btn action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Register
+              </button>
             </div>
           </div>
         </div>
@@ -145,13 +141,47 @@
               <h5 class="card-title">Community Coffee Meetup</h5>
               <p class="card-text">Connect with fellow coffee enthusiasts in a friendly, relaxed setting.</p>
               <p><strong>Date:</strong> March 5, 2025</p>
-              <a href="#" class="btn action-btn">Sign Up</a>
+              <button type="button" class="btn action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Register
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Register Modal trigger btn -->
+  
+  
+  <!-- Register Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Register to this Workshop or Event</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <a type="submit" href="mailto:example@gmail.com" class="btn btn-warning">Register</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="pt-5 pb-2 mt-5">
@@ -173,9 +203,10 @@
               <h3 class="mb-3">Quick Links</h3>
               <div class="d-flex flex-column navlist">
                 <a href="/" class=" fw-light mb-2">Home</a>
-                <a href="/" class=" fw-light mb-2">Coffee</a>
-                <a href="/" class=" fw-light mb-2">Machines</a>
-                <a href="/" class=" fw-light mb-2">Contact</a>
+                <a href="/coffee.html" class=" fw-light mb-2">Coffee</a>
+                <a href="/equipment.html" class=" fw-light mb-2">Equipment</a>
+                <a href="/contact.html" class=" fw-light mb-2">Contact</a>
+                <a href="/offer.html" class=" fw-light mb-2">Special Offer</a>
               </div>
             </div>
 

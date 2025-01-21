@@ -22,12 +22,6 @@
           <span class="brand-text">Boutique</span>
         </a>
 
-        <button class="navbar-toggler text-warning border-warning btn" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <i class="fa-solid fa-burger"></i>
-        </button>
-
         <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 navlist">
             <li class="nav-item">
@@ -47,30 +41,28 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="/events.html">Events</a>
+              <a class="nav-link text-white" href="/events.html">Events & Workshops</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/offer.html">Special Offer</a>
             </li>
           </ul>
         </div>
 
-        <form class="d-flex align-items-center justify-content-between w-100" role="search">
-          <div class="search-bar me-2 d-flex justify-content-between align-items-center position-relative">
-            <input class="text-white font-bold" type="search" placeholder="Search" aria-label="Search" id="searchInput">
-            <ul id="search-result" class="list-group position-absolute w-100 shadow-lg">
-              <!-- Search Results insert in js -->
-            </ul>
-            <i class="fa-solid fa-magnifying-glass fs-4"></i>
-          </div>
-          <button type="button" class="btn btn-light position-relative" data-bs-toggle="modal"
-            data-bs-target="#cartItemsModal">
+        <div>
+          <button class="navbar-toggler text-warning border-warning btn" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa-solid fa-burger"></i>
+          </button>
+          <button type="button" class="btn btn-light position-relative" data-bs-toggle="modal" data-bs-target="#cartItemsModal">
             <i class="fa-solid fa-cart-shopping"></i>
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-qty-badge">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-qty-badge">
               <!-- qty of cart items -->
               <span class="visually-hidden">unread messages</span>
             </span>
           </button>
-        </form>
-
+        </div>
 
       </div>
     </nav>
@@ -103,120 +95,61 @@
   <!-- Coffee Cards Section -->
   <div class="container my-5">
     <h2 class="text-center mb-4">Featured Coffees</h2>
-    <div class="row g-4">
-      <!-- Coffee Card 1 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card shadow-sm">
-          <img src="./assets/espresso.jpg" class="card-img-top" alt="Espresso">
-          <div class="card-body">
-            <h5 class="card-title">Espresso</h5>
-            <p class="card-text">A strong and bold coffee with rich flavor and a smooth finish.</p>
-            <button class="btn action-btn add-cart-btn">Add to cart <i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
+    <form
+      class="search-bar-container d-flex align-items-center justify-content-between w-75 mx-auto border border-2 px-2 mb-4 rounded-pill shadow-sm"
+      role="search">
+      <div class="search-bar w-100 d-flex justify-content-between align-items-center position-relative">
+        <input class="text-dark fw-bold w-100" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
+        <i class="fa-solid fa-magnifying-glass fs-4"></i>
       </div>
-      <!-- Coffee Card 2 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="./assets/latte.jpg" class="card-img-top" alt="Latte">
-          <div class="card-body">
-            <h5 class="card-title">Latte</h5>
-            <p class="card-text">A perfect blend of espresso and steamed milk with a creamy texture.</p>
-            <button class="btn action-btn add-cart-btn">Add to cart <i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-      <!-- Coffee Card 3 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="./assets/cappuccino.jpg" class="card-img-top" alt="Cappuccino">
-          <div class="card-body">
-            <h5 class="card-title">Cappuccino</h5>
-            <p class="card-text">A classic coffee with equal parts espresso, steamed milk, and foam.</p>
-            <button class="btn action-btn add-cart-btn">Add to cart <i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-      <!-- Coffee Card 4 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="./assets/americano_coffee_1024x.jpg" class="card-img-top" alt="Americano">
-
-          <div class="card-body">
-            <h5 class="card-title">Americano</h5>
-            <p class="card-text">A simple yet flavorful coffee made by adding hot water to espresso.</p>
-            <button class="btn action-btn add-cart-btn">Add to cart <i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-      <!-- Coffee Card 5 -->
-      <div class="col-md-4 col-sm-6 col-sm-6">
-        <div class="card">
-          <img src="./assets/Mocha.png" class="card-img-top" alt="Mocha">
-          <div class="card-body">
-            <h5 class="card-title">Mocha</h5>
-            <p class="card-text">A delightful mix of chocolate, espresso, and steamed milk.</p>
-            <button class="btn action-btn add-cart-btn">Add to cart <i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
-      <!-- Coffee Card 6 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="./assets/Italian_macchiato.png" class="card-img-top" alt="Macchiato">
-
-          <div class="card-body">
-            <h5 class="card-title">Macchiato</h5>
-            <p class="card-text">An espresso-based drink with a splash of steamed milk or foam.</p>
-            <button class="btn action-btn add-cart-btn">Add to cart <i class="fa-solid fa-cart-plus"></i></button>
-          </div>
-        </div>
-      </div>
+    </form>
+    <div class="row g-4" id="coffee-card-container">
+      <!-- Coffee Cards insert in js -->
     </div>
-  </div>
-
-
-  <footer class="pt-5 pb-2 mt-5">
-    <div class="container-fluid container-md">
-      <div class="row ">
-        <div class="col-12 col-md-6 mb-4">
-          <a class="navbar-brand" href="/">
-            <img src="./assets/logo.png" alt="logo" width="100">
-            <span class="brand-text">Boutique</span>
-          </a>
-          <p class="fw-light">Brewing happiness, one cup at a time. Visit us for the perfect blend of warmth and
-            flavor.
-          </p>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="row gap-2">
-            <div class="col">
-              <h3 class="mb-3">Quick Links</h3>
-              <div class="d-flex flex-column navlist">
-                <a href="/" class=" fw-light mb-2">Home</a>
-                <a href="/" class=" fw-light mb-2">Coffee</a>
-                <a href="/" class=" fw-light mb-2">Machines</a>
-                <a href="/" class=" fw-light mb-2">Contact</a>
-              </div>
-            </div>
-
-            <div class="col">
-              <h3 class="mb-3">Connect With Us</h3>
-              <div class="d-flex gap-4">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <hr>
-    <p class="text-center fw-light">All right reserved &#169; 2025</p>
-  </footer>
+
+    <footer class="pt-5 pb-2 mt-5">
+      <div class="container-fluid container-md">
+        <div class="row ">
+          <div class="col-12 col-md-6 mb-4">
+            <a class="navbar-brand" href="/">
+              <img src="./assets/logo.png" alt="logo" width="100">
+              <span class="brand-text">Boutique</span>
+            </a>
+            <p class="fw-light">Brewing happiness, one cup at a time. Visit us for the perfect blend of warmth and
+              flavor.
+            </p>
+          </div>
+    
+          <div class="col-12 col-md-6">
+            <div class="row gap-2">
+              <div class="col">
+                <h3 class="mb-3">Quick Links</h3>
+                <div class="d-flex flex-column navlist">
+                  <a href="/" class=" fw-light mb-2">Home</a>
+                  <a href="/coffee.html" class=" fw-light mb-2">Coffee</a>
+                  <a href="/equipment.html" class=" fw-light mb-2">Equipment</a>
+                  <a href="/contact.html" class=" fw-light mb-2">Contact</a>
+                  <a href="/offer.html" class=" fw-light mb-2">Special Offer</a>
+                  </div>
+                  </div>
+                  
+                  <div class="col">
+                    <h3 class="mb-3">Connect With Us</h3>
+                    <div class="d-flex gap-4">
+                      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  <hr>
+                  <p class="text-center fw-light">All right reserved &#169; 2025</p>
+                  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

@@ -75,41 +75,163 @@ function handleSignUp(modal) {
 
 popUpModal();
 
-// Search Functionality
-const products = [
-    "Espresso",
-    "Latte",
-    "Cappuccino",
-    "Mocha",
-    "Macchiato",
-    "Espresso Machine",
-    "Coffee Grinder",
-    "French Press",
-    "Milk Frother",
-];
-
-const searchInput = document.getElementById("searchInput");
-const searchResultUl = document.getElementById("search-result");
-
-searchInput.addEventListener("input", (e) => {
-    const searchValue = e.target.value;
-
-    if (searchValue.length === 0) {
-        searchResultUl.innerHTML = "";
-        return;
+// Create Coffee and Equipment Cards
+const coffees = [
+    {
+        name: "Espresso",
+        img: "./assets/espresso.png",
+        description: "A strong and bold coffee with rich flavor and a smooth finish.",
+    },
+    {
+        name: "Latte",
+        img: "./assets/latte.jpg",
+        description: "A perfect blend of espresso and steamed milk with a creamy texture.",
+    },
+    {
+        name: "Cappuccino",
+        img: "./assets/cappuccino.jpg",
+        description: "A classic coffee with equal parts espresso, steamed milk, and foam.",
+    },
+    {
+        name: "Americano",
+        img: "./assets/americano.jpg",
+        description: "A simple yet flavorful coffee made by adding hot water to espresso.",
+    },
+    {
+        name: "Mocha",
+        img: "./assets/mocha.jpg",
+        description: "A delightful mix of chocolate, espresso, and steamed milk.",
+    },
+    {
+        name: "Macchiato",
+        img: "./assets/macchiato.jpg",
+        description: "An espresso-based drink with a splash of steamed milk or foam.",
     }
+]
 
-    const searchResult = products.filter((product) =>
-        product.toLowerCase().includes(searchValue.toLowerCase())
-    );
+const equipments = [
+    {
+        name: "Espresso Machine",
+        img: "./assets/espresso-machine.png",
+        description: "Perfect for making professional-grade espresso at home or in your café. This machine delivers consistent,high-quality results every time.",
+        price: "$899"
+    },
+    {
+        name: "Coffee Grinder",
+        img: "./assets/grinder.png",
+        description: "A device used to grind coffee beans into a fine or coarse powder.",
+        price: "$149"
+    },
+    {
+        name: "French Press",
+        img: "./assets/french-press.jpg",
+        description: "Classic and easy-to-use French Press for a rich, full-bodied coffee experience. Durable and stylish foreveryday use.",
+        price: "$19.99"
+    },
+    {
+        name: "Milk Frother",
+        img: "./assets/milk-frother.jpg",
+        description: "Create creamy and velvety froth for your lattes and cappuccinos with this easy-to-use milk frother.Compact and efficient.",
+        price: "$39.99"
+    }
+]
 
-    searchResultUl.innerHTML = "";
-    searchResult.forEach((result) => {
-        const li = document.createElement("li");
-        li.innerText = result;
-        searchResultUl.appendChild(li);
+const coffeeCardContainer = document.getElementById("coffee-card-container");
+
+function createCoffeeCards(coffeeList) {
+    if (!coffeeCardContainer) return;
+    coffeeCardContainer.innerHTML = "";
+    console.log(coffeeList)
+    coffeeList.forEach((coffee) => {
+        const card = document.createElement("div");
+        card.classList.add("col-md-4", "col-sm-6", "mb-4");
+        card.innerHTML = `
+            <div class="card">
+                <img src="${coffee.img}" class="card-img-top" alt="${coffee.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${coffee.name}</h5>
+                    <p class="card-text">${coffee.description}</p>
+                    <button class="btn action-btn add-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </div>
+
+        `;
+        coffeeCardContainer.appendChild(card);
     });
-});
+}
+
+const equipmentCardContainer = document.getElementById("equipment-card-container");
+
+function createEquipmentCards(equipmentList) {
+    if (!equipmentCardContainer) return;
+    equipmentCardContainer.innerHTML = "";
+    equipmentList.forEach((equipment, index) => {
+        const card = document.createElement("div");
+        const justify = index % 2 === 0 ? "justify-content-start" : "justify-content-end";
+        card.classList.add("row", justify);
+        card.innerHTML = `
+            <div class="col-12 col-sm-10 col-md-8">
+                <div class="equipment-item">
+                    <img src="${equipment.img}" alt="${equipment.name}">
+                    <div class="equipment-info">
+                        <h5>${equipment.name}</h5>
+                        <p>${equipment.description}</p>
+                        <p><strong>Price:</strong> ${equipment.price}</p>
+                        <button class="btn action-btn add-cart-btn">Add to cart <i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        `;
+        equipmentCardContainer.appendChild(card);
+    });
+}
+
+createCoffeeCards(coffees);
+createEquipmentCards(equipments);
+
+// Search Functionality
+const searchInput = document.getElementById("searchInput");
+
+function searchProducts(products) {
+    if (!searchInput) return;
+    const searchBarContainer = document.querySelector(".search-bar-container");
+    searchInput.addEventListener("input", (e) => {
+        const searchValue = e.target.value;
+    
+        if (searchValue.length === 0) {
+            if (coffeeCardContainer) {
+                createCoffeeCards(products);
+            } else if (equipmentCardContainer) {
+                createEquipmentCards(products);
+            }
+            return;
+        }
+    
+        const searchResult = products.filter((product) =>
+            product.name.toLowerCase().includes(searchValue.toLowerCase())
+        );
+        
+        if (coffeeCardContainer) {
+            createCoffeeCards(searchResult);
+        }
+
+        if (equipmentCardContainer) {
+            createEquipmentCards(searchResult);
+        }
+    });
+
+    searchInput.addEventListener("focusin", () => {
+        searchBarContainer.classList.add("shadow-lg");
+    });
+
+    searchInput.addEventListener("focusout", () => {
+        searchBarContainer.classList.remove("shadow-lg");
+    });
+
+}
+
+const searchProduct = equipmentCardContainer ? equipments : coffees;
+searchProducts(searchProduct);
 
 // Email Sending
 function sendEmail() {
@@ -182,7 +304,6 @@ function addToCart() {
 function updateCartUI() {
     const cartItemsUl = document.getElementById("cart-items-list");
 
-    console.log(cartItems);
     cartItemsUl.innerHTML = "";
     if (cartItems.length > 0) {
         cartItems.forEach((item) => {

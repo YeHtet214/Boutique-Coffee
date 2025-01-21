@@ -22,12 +22,6 @@
           <span class="brand-text">Boutique</span>
         </a>
 
-        <button class="navbar-toggler text-warning border-warning btn" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <i class="fa-solid fa-burger"></i>
-        </button>
-
         <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 navlist">
             <li class="nav-item">
@@ -47,30 +41,28 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="/events.html">Events</a>
+              <a class="nav-link text-white" href="/events.html">Events & Workshops</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/offer.html">Special Offer</a>
             </li>
           </ul>
         </div>
 
-        <form class="d-flex align-items-center justify-content-between w-100" role="search">
-          <div class="search-bar me-2 d-flex justify-content-between align-items-center position-relative">
-            <input class="text-white font-bold" type="search" placeholder="Search" aria-label="Search" id="searchInput">
-            <ul id="search-result" class="list-group position-absolute w-100 shadow-lg">
-              <!-- Search Results insert in js -->
-            </ul>
-            <i class="fa-solid fa-magnifying-glass fs-4"></i>
-          </div>
-          <button type="button" class="btn btn-light position-relative" data-bs-toggle="modal"
-            data-bs-target="#cartItemsModal">
+        <div>
+          <button class="navbar-toggler text-warning border-warning btn" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa-solid fa-burger"></i>
+          </button>
+          <button type="button" class="btn btn-light position-relative" data-bs-toggle="modal" data-bs-target="#cartItemsModal">
             <i class="fa-solid fa-cart-shopping"></i>
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-qty-badge">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-qty-badge">
               <!-- qty of cart items -->
               <span class="visually-hidden">unread messages</span>
             </span>
           </button>
-        </form>
-
+        </div>
 
       </div>
     </nav>
@@ -89,6 +81,9 @@
           <p>Subscribe to our newsletter to receive a 20% discount on your first purchase.</p>
           <form id="signUpForm">
             <div class="mb-3">
+              <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
+              </div>
+              <div class="mb-3">
               <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
             </div>
             <button type="submit" class="btn btn-warning w-100">Sign Up Now</button>
@@ -117,9 +112,9 @@
   <main class="mb-5">
     <section id="hero" class="container-fluid">
       <div class="container">
-        <h1 class="mt-5 mb-4 display-4">Discover the taste of <br class="d-none d-md-block">real
-          coffee</h1>
-        <p class="lead">Boost your productivity and build your mood <br> with a glass of coffee in
+        <h2 class="mt-5 mb-4 display-1">Discover the taste of <br class="d-none d-md-block">real
+          coffee</h2>
+        <p class="lead">Boost your productivity and build your mood <br class="d-none d-md-block"> with a glass of coffee in
           the
           morning.
         </p>
@@ -170,7 +165,7 @@
         <div class="carousel-inner ">
           <div class="carousel-item active">
             <a href="./coffee.html">
-              <img src="./assets/coffee4.jpg" class="d-block w-100" alt="...">
+              <img src="./assets/macchiato.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h3 class="text-warning fst-italic">Italian Macchiato</h5>
               </div>
@@ -186,7 +181,7 @@
           </div>
           <div class="carousel-item">
             <a href="./coffee.html">
-              <img src="./assets/americano_coffee_1024x.jpg" class="d-block w-100" alt="...">
+              <img src="./assets/americano.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h3 class="text-warning fst-italic">Americano</h5>
               </div>
@@ -277,9 +272,10 @@
               <h3 class="mb-3">Quick Links</h3>
               <div class="d-flex flex-column navlist">
                 <a href="/" class=" fw-light mb-2">Home</a>
-                <a href="/" class=" fw-light mb-2">Coffee</a>
-                <a href="/" class=" fw-light mb-2">Machines</a>
-                <a href="/" class=" fw-light mb-2">Contact</a>
+                <a href="/coffee.html" class=" fw-light mb-2">Coffee</a>
+                <a href="/equipment.html" class=" fw-light mb-2">Equipment</a>
+                <a href="/contact.html" class=" fw-light mb-2">Contact</a>
+                <a href="/offer.html" class=" fw-light mb-2">Special Offer</a>
               </div>
             </div>
 

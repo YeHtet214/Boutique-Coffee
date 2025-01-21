@@ -77,20 +77,15 @@ nav {
 }
 
 .search-bar {
-  background-color: #B7896F;
+  /* background-color: #B7896F; */
   border-radius: 20px;
   padding: 5px 10px;
 }
 
 .search-bar input {
   background-color: transparent;
-  color: white;
   outline: none;
   border: none;
-}
-
-.search-bar input::placeholder {
-  color: white;
 }
 
 #search-result {
